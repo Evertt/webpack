@@ -6,8 +6,9 @@ import store from './store'
 {{#router}}
 import router from './router'
 {{/router}}
-
 {{#if_and vuex router}}
+import { sync } from 'vuex-router-sync'
+
 sync(store, router)
 {{/if_and}}
 
