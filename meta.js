@@ -6,8 +6,7 @@ module.exports = {
       }
 
       return options.inverse(this);
-    }
-  },
+    },
     "if_and": function (v1, v2, options) {
       if (v1 && v2) {
         return options.fn(this);
