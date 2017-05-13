@@ -15,7 +15,7 @@ Vue.config.productionTip = false
 
 new Vue({
   el: '#app',
-  {{#router}}router, {{/router}}{{#vuex}}store, {{#vuex}}
+  {{#router}}router, {{/router}}{{#vuex}}store, {{/vuex}}
   {{#if_eq build "runtime"}}
   render: h => h(App)
   {{/if_eq}}
