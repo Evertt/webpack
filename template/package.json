@@ -10,19 +10,18 @@
     "build": "node build/build.js"{{#unit}},
     "unit": "cross-env BABEL_ENV=test karma start test/unit/karma.conf.js --single-run"{{/unit}}{{#e2e}},
     "e2e": "node test/e2e/runner.js"{{/e2e}}{{#if_or unit e2e}},
-    "test": "{{#unit}}npm run unit{{/unit}}{{#unit}}{{#e2e}} && {{/e2e}}{{/unit}}{{#e2e}}npm run e2e{{/e2e}}"{{/if_or}}{{#lint}},
-    "lint": "eslint --ext .js,.vue src{{#unit}} test/unit/specs{{/unit}}{{#e2e}} test/e2e/specs{{/e2e}}"{{/lint}}
+    "test": "{{#unit}}npm run unit{{/unit}}{{#unit}}{{#e2e}} && {{/e2e}}{{/unit}}{{#e2e}}npm run e2e{{/e2e}}"{{/if_or}}
   },
-  "dependencies": {
+  "dependencies": {{{#axios}}
+    "axios": "^0.16.1",{{/axios}}
     "vue": "^2.2.6"{{#router}},
-    "vue-router": "^2.3.1"{{/router}}
+    "vue-router": "^2.3.1"{{/router}}{{#vuex}},
+    "vuex": "^2.3.1"{{/vuex}}{{#if_and vuex router}},
+    "vuex-router-sync": "^4.1.2"{{/if_and}}
   },
   "devDependencies": {
     "autoprefixer": "^6.7.2",
     "babel-core": "^6.22.1",
-    {{#lint}}
-    "babel-eslint": "^7.1.1",
-    {{/lint}}
     "babel-loader": "^6.2.10",
     "babel-plugin-transform-runtime": "^6.22.0",
     "babel-preset-env": "^1.3.2",
@@ -32,22 +31,6 @@
     "connect-history-api-fallback": "^1.3.0",
     "copy-webpack-plugin": "^4.0.1",
     "css-loader": "^0.28.0",
-    {{#lint}}
-    "eslint": "^3.19.0",
-    "eslint-friendly-formatter": "^2.0.7",
-    "eslint-loader": "^1.7.1",
-    "eslint-plugin-html": "^2.0.0",
-    {{#if_eq lintConfig "standard"}}
-    "eslint-config-standard": "^6.2.1",
-    "eslint-plugin-promise": "^3.4.0",
-    "eslint-plugin-standard": "^2.0.1",
-    {{/if_eq}}
-    {{#if_eq lintConfig "airbnb"}}
-    "eslint-config-airbnb-base": "^11.1.3",
-    "eslint-import-resolver-webpack": "^0.8.1",
-    "eslint-plugin-import": "^2.2.0",
-    {{/if_eq}}
-    {{/lint}}
     "eventsource-polyfill": "^0.9.6",
     "express": "^4.14.1",
     "extract-text-webpack-plugin": "^2.0.0",
@@ -84,14 +67,21 @@
     {{/e2e}}
     "semver": "^5.3.0",
     "shelljs": "^0.7.6",
+    "stylus": "^0.54.5",
+    "stylus-loader": "^3.0.1",
+    "ts-loader": "^2.0.3",
+    "typescript": "^2.3.2",
     "opn": "^4.0.2",
     "optimize-css-assets-webpack-plugin": "^1.3.0",
     "ora": "^1.2.0",
+    "pug": "^2.0.0-rc.1",
+    "pug-loader": "^2.3.0",
     "rimraf": "^2.6.0",
     "url-loader": "^0.5.8",
     "vue-loader": "^11.3.4",
     "vue-style-loader": "^2.0.5",
     "vue-template-compiler": "^2.2.6",
+    "vue-typescript-decorators": "^0.2.1",
     "webpack": "^2.3.3",
     "webpack-dev-middleware": "^1.10.0",
     "webpack-hot-middleware": "^2.18.0",
