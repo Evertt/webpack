@@ -1,4 +1,6 @@
+{{#axios}}
 import axios from 'axios'
+{{/axios}}
 
 import {
     Vue,
@@ -16,9 +18,11 @@ import {
     Component,
 } from 'vue-typescript-decorators'
 
+{{#axios}}
 axios.defaults.headers.common = {
     "X-Requested-With": "XMLHttpRequest"
 };
+{{/axios}}
 
 global.Vue       = Vue
 global.Mix       = Mix

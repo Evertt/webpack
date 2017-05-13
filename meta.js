@@ -55,6 +55,10 @@ module.exports = {
       "type": "confirm",
       "message": "Install vuex?"
     },
+    "axios": {
+      "type": "confirm",
+      "message": "Install axios?"
+    },
     "unit": {
       "type": "confirm",
       "message": "Setup unit tests with Karma + Mocha?"

@@ -12,7 +12,7 @@
     "e2e": "node test/e2e/runner.js"{{/e2e}}{{#if_or unit e2e}},
     "test": "{{#unit}}npm run unit{{/unit}}{{#unit}}{{#e2e}} && {{/e2e}}{{/unit}}{{#e2e}}npm run e2e{{/e2e}}"{{/if_or}}
   },
-  "dependencies": {{{#axios}}
+  "dependencies": \{{{#axios}}
     "axios": "^0.16.1",{{/axios}}
     "vue": "^2.2.6"{{#router}},
     "vue-router": "^2.3.1"{{/router}}{{#vuex}},
