@@ -51,6 +51,10 @@ module.exports = {
       "type": "confirm",
       "message": "Install vue-router?"
     },
+    "vuex": {
+      "type": "confirm",
+      "message": "Install vuex?"
+    },
     "unit": {
       "type": "confirm",
       "message": "Setup unit tests with Karma + Mocha?"
